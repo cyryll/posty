@@ -19,7 +19,8 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
+// //autheticate authorised dashboard view using middleware
+// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
